@@ -1,5 +1,9 @@
-from configparser import ConfigParser
+class Simulator:
 
-
-def foobar():
-    return 1
+    def __init__(self, flakiness, max_queue_length=100):
+        # flakiness: in percent
+        self.chances_for_no_gate_reset_at_any_element_in_queue = []
+        # the index is the position in the queue
+        for i in range(max_queue_length):
+            self.chances_for_no_gate_reset_at_any_element_in_queue.append(
+                pow(flakiness, i+1))
