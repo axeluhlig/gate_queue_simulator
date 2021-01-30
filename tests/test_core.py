@@ -51,18 +51,17 @@ class TestSimulator(unittest.TestCase):
             position, expected_value, flakiness)
 
     def test_basic_sim_red_gate(self):
-        initial_queue_length = 10
         flakiness = 1.0
         new_elements_per_time_interval = 10
         cycle = 10
-        expected_queue_length = initial_queue_length + \
-            cycle * new_elements_per_time_interval - \
+        expected__final_queue_length = cycle * new_elements_per_time_interval - \
             cycle  # total number of elements added - number of elements removed because of gate reset
 
         resulting_queue_length = self.unit.do_basic_sim(
-            initial_queue_length, flakiness, new_elements_per_time_interval, cycle, verbosity=False)
+            flakiness, new_elements_per_time_interval, cycle, verbosity=False)
 
-        self.assertEqual(expected_queue_length, resulting_queue_length)
+        self.assertEqual(expected__final_queue_length,
+                         resulting_queue_length[-1])
 
 
 if __name__ == '__main__':

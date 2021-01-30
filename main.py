@@ -12,7 +12,7 @@ from simulator import core
 
 def main():
     sim = core.Simulator()
-    print(sim.do_basic_sim(initial_queue_length=5, flakiness=0.01,
+    print(sim.do_basic_sim(flakiness=0.01,
                            new_elements_per_time_interval=10, cycle=1000, verbosity=False))
 
 
