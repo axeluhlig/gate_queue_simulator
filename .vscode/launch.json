@@ -8,8 +8,8 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            // "program": "main.py",
-            "program": "tests/test_core.py",
+            "program": "main.py",
+            //"program": "tests/test_core.py",
             "console": "integratedTerminal"
         }
     ]
