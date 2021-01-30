@@ -11,7 +11,7 @@ class TestSimulator(unittest.TestCase):
         self.unit = unit.Simulator(self.flakiness)
 
     def __chances_for_no_gate_reset_at_given_queue_position(self, queue_position, expected_value):
-        actual_value = self.unit.chances_for_no_gate_reset_at_any_element_in_queue[queue_position]
+        actual_value = self.unit.chances_for_no_gate_reset_at_any_element_in_queue_until_given_index[queue_position]
         self.assertEqual(expected_value, actual_value)
 
     def test_chances_for_no_gate_reset_at_queue_position_0(self):
