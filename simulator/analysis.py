@@ -10,6 +10,7 @@ def plot_tipping_point(simulator_func):
     X, Y = np.meshgrid(flakiness, new_elements_per_cycle) 
     zs = np.empty((len(flakiness), len(new_elements_per_cycle)))
     for i, f in enumerate(flakiness):
+        print(str(i) + '/' + str(len(flakiness)))
         for j, n in enumerate(new_elements_per_cycle):
             zs[i][j] = int(determine_stability(simulator_func(f, n, cycles, verbosity=False)))
     Z = zs.reshape(X.shape)

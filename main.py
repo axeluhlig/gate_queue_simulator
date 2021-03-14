@@ -3,9 +3,9 @@
 from simulator import core, analysis
 
 # next steps
-# - do gate resets not at head, but with decreasing probability
-# - write function to search for tipping point in regards of flakiness for given new_elements
-# - plot final results: tipping points on flakiness vs new_elements plot
+# - write more advanced simulator: doing n runs per input params, returning percentage of stable results
+# - write more advanced simulator: do gate resets not at head, but with decreasing probability
+# - multi processing for calling the simulator
 
 
 def main():
