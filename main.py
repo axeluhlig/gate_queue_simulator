@@ -10,13 +10,7 @@ from simulator import core, analysis
 
 def main():
     sim = core.Simulator()
-    # if this number is big enough (e.g. 10,000) you  don't need to run the sim n times to get a good result
-    cycle = 10000
-    flakiness = 0.02
-    new_elements_per_time_interval = 10
-    results = sim.do_basic_sim(flakiness,
-                               new_elements_per_time_interval, cycle, verbosity=False)
-    analysis.plot_simulation(results, flakiness, new_elements_per_time_interval)
+    analysis.plot_tipping_point(sim.do_basic_sim)
 
 
 if __name__ == "__main__":
